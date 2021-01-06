@@ -3,6 +3,7 @@ module.exports = {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
+
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
@@ -13,7 +14,7 @@ module.exports = {
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
       updatedAt: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
       },
       deletedAt: { type: Sequelize.DATE },
     })
@@ -26,7 +27,7 @@ module.exports = {
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
       updatedAt: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
       },
       deletedAt: { type: Sequelize.DATE },
     })
@@ -36,11 +37,12 @@ module.exports = {
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
+
       Example:
       return queryInterface.dropTable('users');
     */
     await queryInterface.dropTable('products')
 
     return queryInterface.dropTable('manufacturers')
-  },
+  }
 }
